@@ -13,6 +13,8 @@ export class ItemsComponent implements OnInit {
 
   displayedColumns: string[] = ['id', 'name', 'description', 'state', 'category', 'date', 'tags', 'view'];
 
+
+  //Subscribing to the post service
   constructor(private service:PostService) { }
 
   ngOnInit(){

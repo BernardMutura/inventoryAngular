@@ -21,6 +21,8 @@ export class SingleItemComponent implements OnInit {
   date: any;
 
 
+
+  //code to generate a pdf file
   generatePdf() {
     const documentDefinition: any = {
       content: [
@@ -76,6 +78,7 @@ export class SingleItemComponent implements OnInit {
   }
 
 
+  //Acquire route parameters to get a single item
   constructor(private route: ActivatedRoute, private service: PostService) { }
 
   ngOnInit(){

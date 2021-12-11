@@ -13,6 +13,7 @@ export class AddItemComponent {
 
   users: any;
 
+  //Defining catogories array
   categories = [
     {"name": "Monitor"},
     {"name": "CPU"},
@@ -22,6 +23,7 @@ export class AddItemComponent {
     {"name": "Mouse"}
   ];
 
+  //Defining tags array
   tags = [
     {"name": "HP"},
     {"name": "SAMSUNG"},
@@ -32,6 +34,7 @@ export class AddItemComponent {
     {"name": "LENOVO"},
   ];
 
+  //Creating a form group with individual form controls
   itemsForm = new FormGroup({
     "item-name": new FormControl('',[Validators.required]),
     "item-description": new FormControl('',[Validators.required]),
@@ -42,10 +45,15 @@ export class AddItemComponent {
     "item-tag": new FormControl(),
   })
 
+  //subscribing to the UserData Service
   constructor(private userData: UsersDataService) { }
 
   onSubmit(data: any) {
+
+    //console testing to view submitted form array
     console.warn(data);
+
+    //Adding the item to the endpoint
     this.userData.saveUser(data).subscribe((result)=>{
       console.warn(result)
     })    

@@ -11,7 +11,6 @@ export class PostService {
 
   json: any;
 
-  // private url = 'http://localhost:3000/items';
 
   private url = 'https://60742d38066e7e0017e793ca.mockapi.io/api/v1/add-item/';
 
