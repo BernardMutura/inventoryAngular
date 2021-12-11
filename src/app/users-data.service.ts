@@ -6,7 +6,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class UsersDataService {
 
-  url='http://localhost:3000/items';
+  url='https://60742d38066e7e0017e793ca.mockapi.io/api/v1/add-item';
 
   constructor(private http: HttpClient) { }
 
