@@ -1,0 +1,42 @@
+<mat-card>
+<form [formGroup]="itemsForm" (ngSubmit)="onSubmit(itemsForm.value)" novalidate>
+
+    <label for="itemname">Item Name</label>
+    <input type="text" name="item-name" formControlName="item-name" placeholder="Item Name">
+    
+    <label for="itemdescription">Item Description</label>
+    <textarea name="item-description" formControlName="item-description" placeholder="Item Description"></textarea>
+
+    <label for="itemstate"><h3>Item State</h3></label>
+    <p>
+    <label for="itemstate">New</label>
+    <input type="radio" name="item-state" formControlName="item-state" value="New">
+
+    <label for="itemstate">Refurbished</label>
+    <input type="radio" name="item-state" formControlName="item-state" value="Refurbished">
+    </p>
+
+    <p>
+    <label for="itemcategory">Item Category</label>
+    
+    <select name="item-category" formControlName="item-category">
+        <option *ngFor="let category of categories">{{category.name}}</option>
+    </select>
+    </p>
+
+    <label for="itemdate">Date Purchased</label>
+    <input type="date" name="item-date" formControlName="item-date">
+ 
+    <p><label for="itemtag">Item Tag</label></p>
+    
+    <div *ngFor="let tag of tags">
+    <input type="checkbox" name="item-tag" formControlName="item-tag" value={{tag.name}}>{{tag.name}}
+    </div>
+    
+ 
+    <label for="itemimage">Item Image</label>
+    <input type="file" name="item-img" formControlName="item-img">
+
+    <button mat-raised-button color="primary" type="submit" [disabled]="!itemsForm.valid">Submit</button>
+</form>
+</mat-card>
